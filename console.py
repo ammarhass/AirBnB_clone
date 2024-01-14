@@ -42,7 +42,7 @@ class HBNBCommand(cmd.Cmd):
             an instance based on the class name and id"""
         storage.reload()
         objects = storage.all()
-        if values == "":    
+        if values == "":
             print("** class name missing **")
             return
         val = shlex.split(values)
@@ -57,11 +57,11 @@ class HBNBCommand(cmd.Cmd):
             return
         else:
             print(objects[f"{val[0]}.{val[1]}"])
-    
+
     def do_destroy(self, values):
         '''  Deletes an instance based on the class name and id'''
         storage.reload()
-        objects = storage.all()    
+        objects = storage.all()
         if values == "":
             print("** class name missing **")
             return
@@ -81,4 +81,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
