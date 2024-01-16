@@ -4,7 +4,12 @@ import cmd
 import shlex
 from models import storage
 from models.base_model import BaseModel
-
+from models.user import User
+from models.reivew import Review
+from models.place import Place
+from models.city import City
+from models.amenity import Amenity
+from models.state import State
 
 class HBNBCommand(cmd.Cmd):
     """ Define s HBNBCommand class"""
@@ -12,6 +17,13 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     class_names = {
             'BaseModel': BaseModel,
+            'Amenity': Amenity,
+            'User': User,
+            'State': State,
+            'City': City,
+            'Place': Place,
+            'Review': Review
+            
             }
 
     def do_EOF(self, arg):
